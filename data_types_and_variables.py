@@ -20,5 +20,9 @@ print(offer_can_be_applied)
 
 username = 'codeup'
 password = 'notastrongpassword'
-length = len(password)
-length > 5
+
+print(len(password) >=  5)
+print(len(username) < 20)
+print(username != password)
+username = username.strip or username != username.strip
+password = password.strip or password != password.strip
