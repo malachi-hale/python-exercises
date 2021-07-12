@@ -1,23 +1,24 @@
 #1a
-current_day = input("Please enter the day of the week.")
+current_day = input("Please enter the day of the week. ")
 
 if current_day == 'Monday':
     print("Today is Monday!")
 else: 
-    print("Today is not Monday.")
-
+    print("Today is not Monday. ")
+print("\n")
 #1b 
-current_day = input("Please enter the day of the week.")
+current_day = input("Please enter the day of the week. ")
 if current_day == 'Monday' or current_day == 'Tuesday' or current_day == 'Wednesday' or current_day == 'Thursday' or current_day == 'Friday':
     print("Today is a weekday.")
 elif current_day == 'Saturday' or current_day == 'Sunday':
     print('Today is the weekend.')
 else:
     print('Invalid date.')
+print("\n")
 
 #1c
-number_of_hours_worked_in_a_week = input("How many hours did you work this week?")
-hourly_rate = input("What is your hourly rate?")
+number_of_hours_worked_in_a_week = input("How many hours did you work this week? ")
+hourly_rate = input("What is your hourly rate? ")
 number_of_hours_worked_in_a_week = int(number_of_hours_worked_in_a_week)
 hourly_rate = int(hourly_rate)
 if number_of_hours_worked_in_a_week <= 40:
@@ -26,34 +27,41 @@ if number_of_hours_worked_in_a_week <= 40:
 elif number_of_hours_worked_in_a_week > 40:
     paycheck = ((number_of_hours_worked_in_a_week - 40) * hourly_rate *1.5)+((((number_of_hours_worked_in_a_week)-(number_of_hours_worked_in_a_week-40))*hourly_rate))
     print("You made", paycheck, "dollars this week.")
-else 
+else:
     print("You made money.")
+print("\n")
 
 #2a
 i = 5
 while (i <= 15): 
     print(i)
     i += 1
- 
+print("\n")
+
 i = 0 
 while(i <= 100):
     print(i)
     i += 2
+print("\n")
 
 i = 100
 while(i >= - 10):
     print(i)
     i -= 5
+print("\n")
+
 
 i = 2
 while(i <= 1000000):
     print(i)
     i = i*i
+print("\n")
 
 i = 100
 while(i >= 5):
     print(i)
     i -= 5
+print("\n")
 
 #2bi 
 user_number = int(input("Please enter a number:  \n"))
@@ -61,10 +69,12 @@ user_number = int(input("Please enter a number:  \n"))
 for i in range(1,10):
     product = user_number * i
     print(str(user_number), "x", str(i), "=", str(product))
+print("\n")
 
 #2bii
 for i in range(1, 10):
     print(str(i) * i)
+print("\n")
 
 #2c
 your_number = input("Please enter an odd number between 1 and 50: \n")
@@ -74,11 +84,12 @@ while your_number.isdigit() == False:
     your_number = input("Please enter an odd number between 1 and 50: \n")
 
 for i in range(1, 51):
-    if i % 2 == 0 or i == int(your_number):
+    if i % 2 != 0 or i == int(your_number):
         if i == int(your_number):
             print("Yikes! Skipping number: ", i)
             continue
-    print("Here is an odd number: ", i)
+        print("Here is an odd number: ", i)
+print("\n")
 
 #2d 
 new_number = input("Please enter a positive number: \n")
@@ -89,6 +100,7 @@ i=0
 while i <= int(new_number):
     print(i)
     i +=1
+print("\n")
 
 #2e 
 positive_number = input("Please enter a positive integer: ")
@@ -100,6 +112,7 @@ i = int(positive_number) + 0
 while i >=1: 
     print(i)
     i -= 1
+print("\n")
 
 #3
 i  = 1
@@ -113,6 +126,7 @@ while i <= 100:
     else:
         print(i)
     i += 1 
+print("\n")
 
 #4 
 user_integer = int(input("What number would you like to go up to? "))
@@ -122,9 +136,14 @@ print(f"------ | ------- | -----")
 
 for i in range (1, user_integer + 1):
     print(f"{i:<7}|{i**2:<8} |{i**3:<4}")
-    go_up = input("Would you like to continue? ")
-    if go_up not in ['yes']:
+    if user_integer <= i:
         break
+    go_up = input("Would you like to continue? ")
+    if go_up not in ['yes'] :
+        break
+    
+        
+print("\n")
 
 #5
 go_up = True
@@ -159,13 +178,14 @@ while go_up:
     go_up = input("Would you like to keep going? ")
     if go_up not in ['yes']:
         go_up = False
+print("\n")
 
 #6
 books = [
     {
     "Title": "Gone Girl", 
     "Author" : "Gillian Flynn",
-    "Genre": "Thriler"
+    "Genre": "Thriller"
         },
     {
     "Title": "The Girl With the Dragon Tattoo",
