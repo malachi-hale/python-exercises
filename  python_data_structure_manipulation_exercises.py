@@ -133,6 +133,7 @@ for student in students:
         for pet in student["pets"]:
             pet_counts[pet["species"]] += 1
 print(pet_counts)
+
 #4 
 for student in students:
     print(len(student["grades"]))
