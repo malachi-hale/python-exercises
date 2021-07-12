@@ -1,6 +1,3 @@
-from collections import Counter
-
-
 students = [
     {
         "id": "100001",
@@ -131,3 +128,138 @@ dark_coffee = len([student for student in students if student['coffee_preference
 print(light_coffee, "students prefer light coffee.", medium_coffee, "students prefer medium coffee.", dark_coffee, "students prefer dark coffee.")
 
 #3
+pet_counts = {"dog": 0, "cat": 0, "horse": 0}
+for student in students:
+        for pet in student["pets"]:
+            pet_counts[pet["species"]] += 1
+print(pet_counts)
+#4 
+for student in students:
+    print(len(student["grades"]))
+##Yes every student has 4 grades
+
+#5 
+for student in students:
+    grades = student["grades"]
+    average_grade = (sum(grades))/(len(grades))
+    print("This student's average grade is", average_grade)
+
+#6 
+for student in students:
+    print(len(student["pets"]))
+
+#7
+web_development = len([student for student in students if student["course"] == "web development"])
+data_science = len([student for student in students if student["course"] == "data science"])
+print(web_development, "students are studying web development.", data_science, "students are studying data science.")
+
+#8 
+number_of_pets = []
+for student in students:
+    if student["course"] == "web development":
+        number_of_pets.append(len(student["pets"]))
+print(sum(number_of_pets)/len(number_of_pets))
+
+#9
+pet_age = []
+for student in students:
+    if student["course"] == "data science":
+        for pet in student["pets"]:
+            pet_age.append(pet["age"])
+print(sum(pet_age)/len(pet_age))   
+
+#10
+coffee_count = {"dark": 0, "medium": 0, "light": 0}
+for student in students: 
+    if student["course"] == "data science":
+        if student["coffee_preference"] == "dark":
+            coffee_count["dark"] +=1
+        if student["coffee_preference"] == "medium":
+            coffee_count["medium"] +=1
+        if student["coffee_preference"] == "light":
+            coffee_count["light"] +=1
+print("The most popular type of cofee among data science students is", max(coffee_count), "coffee.")
+
+#11
+coffee_count = {"dark": 0, "medium": 0, "light": 0}
+for student in students: 
+    if student["course"] == "web development":
+        if student["coffee_preference"] == "dark":
+            coffee_count["dark"] +=1
+        if student["coffee_preference"] == "medium":
+            coffee_count["medium"] +=1
+        if student["coffee_preference"] == "light":
+            coffee_count["light"] +=1
+print("The least popular coffee type among web development students is", min(coffee_count), "coffee.")
+
+#12
+grades = []
+for student in students:
+    if len(student["pets"]) >= 2:
+        for grade in student["grades"]:
+            grades.append(grade)
+print(sum(grades)/len(grades))
+
+#13
+student_with_three_pets = []
+for student in students: 
+    if len(student["pets"]) == 3:
+        student_with_three_pets.append(student["student"]) 
+print(len(student_with_three_pets))
+
+#14
+grades_of_students_with_no_pets = []
+for student in students: 
+    if len(student["pets"]) == 0:
+        for grade in student["grades"]:
+            grades_of_students_with_no_pets.append(grade)
+print(sum(grades_of_students_with_no_pets)/len(grades_of_students_with_no_pets))
+
+#15 
+grades_web_development = []
+grades_data_science = []
+for student in students:
+    if student["course"] == "data science":
+        for grade1 in student["grades"]:
+            grades_data_science.append(grade1)
+    if student["course"] == "web development":
+        for grade2 in student["grades"]:
+            grades_web_development.append(grade2)
+print("The average grade of data science students is ", sum(grades_data_science)/len(grades_data_science))
+print("The average grade of web development student is", sum(grades_web_development)/len(grades_web_development))
+
+#16 
+grades_dark_coffee = []
+for student in students:
+    if student["coffee_preference"] == "dark":
+        grades_dark_coffee.append(sum(student["grades"])/len(student["grades"]))
+print(max(grades_dark_coffee) - min(grades_dark_coffee))
+
+#17 
+pets_medium_coffee = []
+for student in students:
+    if student["coffee_preference"] == "medium":
+        pets_medium_coffee.append(len(student["pets"]))
+print(sum(pets_medium_coffee)/len(pets_medium_coffee))
+
+#18
+pet_counts = {"dog": 0, "cat": 0, "horse": 0}
+for student in students:
+    if student["course"] == "web development":
+         for pet in student["pets"]:
+            pet_counts[pet["species"]] += 1
+print(max(pet_counts))
+
+#19 
+student_names_length = []
+for student in students:
+    student_names_length.append(len(student["student"]))
+print(sum(student_names_length)/len(student_names_length))
+
+#20
+pet_age_for_light_coffee_drinker = []
+for student in students:
+    if student["coffee_preference"] == "light":
+        for pet in student["pets"]:
+            pet_age_for_light_coffee_drinker.append(pet["age"])
+print(max(pet_age_for_light_coffee_drinker))
