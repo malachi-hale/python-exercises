@@ -129,6 +129,7 @@ while i <= 100:
 print("\n")
 
 #4 
+
 user_integer = int(input("What number would you like to go up to? "))
 print(f"\nHere is your table!\n")
 print(f"number | squared | cubed")
@@ -138,11 +139,18 @@ for i in range (1, user_integer + 1):
     print(f"{i:<7}|{i**2:<8} |{i**3:<4}")
     if user_integer <= i:
         break
-    go_up = input("Would you like to continue? ")
-    if go_up not in ['yes'] :
-        break
-    
-        
+
+go_up = input("Would you like to continue? ")
+while go_up in ['yes']:
+    user_integer = int(input("What number would you like to go up to? "))
+    print(f"\nHere is your table!\n")
+    print(f"number | squared | cubed")
+    print(f"------ | ------- | -----")
+
+    for i in range (1, user_integer + 1):
+        print(f"{i:<7}|{i**2:<8} |{i**3:<4}")
+        if user_integer <= i:
+            break
 print("\n")
 
 #5
