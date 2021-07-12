@@ -6,7 +6,7 @@ uppercased_fruit = [fruit.upper() for fruit in fruits]
 print(uppercased_fruit)
 
 #Exercise 2 
-capitalized_fruits = [fruit.capitalize() for fruit in fruits]
+capitalized_fruits = [fruit.title() for fruit in fruits]
 print(capitalized_fruits)
 
 #Exercise 3

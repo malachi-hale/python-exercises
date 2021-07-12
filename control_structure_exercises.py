@@ -129,19 +129,8 @@ while i <= 100:
 print("\n")
 
 #4 
-
-user_integer = int(input("What number would you like to go up to? "))
-print(f"\nHere is your table!\n")
-print(f"number | squared | cubed")
-print(f"------ | ------- | -----")
-
-for i in range (1, user_integer + 1):
-    print(f"{i:<7}|{i**2:<8} |{i**3:<4}")
-    if user_integer <= i:
-        break
-
-go_up = input("Would you like to continue? ")
-while go_up in ['yes']:
+go_up = True 
+while go_up:
     user_integer = int(input("What number would you like to go up to? "))
     print(f"\nHere is your table!\n")
     print(f"number | squared | cubed")
@@ -151,7 +140,9 @@ while go_up in ['yes']:
         print(f"{i:<7}|{i**2:<8} |{i**3:<4}")
         if user_integer <= i:
             break
-print("\n")
+    go_up = input("Would you like to keep going? ")
+    if go_up not in ['yes']:
+        go_up = False
 
 #5
 go_up = True
