@@ -1,0 +1,5 @@
+def is_vowel(n):
+    if n.lower() in 'aeiou':
+        return True
+    else:
+        return False 
