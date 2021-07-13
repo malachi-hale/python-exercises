@@ -142,9 +142,12 @@ def normalize_name(name):
                     name = name.replace(i, " ") 
             name = name.strip()
             name = name.replace(" ", "_")
-            while name[0].isnumeric():
-                name = name[1:]
-            return name
+            if not name:
+                return "The string is made entirely out of symbols"
+            else:
+                while name[0].isnumeric():
+                    name = name[1:]
+                return name
     elif type(name) == float or int:
         return "not a string"
 
@@ -153,6 +156,7 @@ print(normalize_name("%      words hello"))
 print(normalize_name("Today I % $"))
 print(normalize_name("999999%9_a9asdlk"))
 print(normalize_name("9000"))
+print(normalize_name("$#$"))
 print("\n")
 
 #11
@@ -167,3 +171,5 @@ def cumulative_sum(list):
 list = [10, 20, 30, 40, 50]
 print(cumulative_sum(list))
 print("\n")
+
+
