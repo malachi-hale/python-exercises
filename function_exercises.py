@@ -133,20 +133,18 @@ print("\n")
 #10 
 def normalize_name(name):
     if type(name) == str:
-        name = name.lower()
-        for i in name:          
-            if i.isalpha() == False and i.isnumeric() == False:
-                name = name.replace(i, " ") 
-        name = name.strip()
-        name = name.replace(" ", "_")
-        while name[0].isnumeric():
-            name = name.replace(name[0], "%")
-        for i in name:          
-            if i.isalpha() == False and i.isnumeric() == False:
-                name = name.replace(i, " ") 
-        name = name.strip()
-        name = name.replace(" ", "_")
-        return name
+        if name.isnumeric():
+            return "unable to normalize names made entirely out of numbers"
+        else:
+            name = name.lower()
+            for i in name:          
+                if i.isalpha() == False and i.isnumeric() == False:
+                    name = name.replace(i, " ") 
+            name = name.strip()
+            name = name.replace(" ", "_")
+            while name[0].isnumeric():
+                name = name[1:]
+            return name
     elif type(name) == float or int:
         return "not a string"
 
@@ -154,7 +152,7 @@ print(normalize_name("Today I went to the store"))
 print(normalize_name("%      words hello"))
 print(normalize_name("Today I % $"))
 print(normalize_name("999999%9_a9asdlk"))
-print(normalize_name("9999"))
+print(normalize_name("9000"))
 print("\n")
 
 #11
