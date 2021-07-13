@@ -129,7 +129,7 @@ def remove_vowels(word):
 print(remove_vowels("bananas"))
 print(remove_vowels("Today I went to the mall and saw my friend"))
 print(remove_vowels(9000))
-
+print("\n")
 #10 
 def normalize_name(name):
     if type(name) == str:
@@ -140,7 +140,12 @@ def normalize_name(name):
         name = name.strip()
         name = name.replace(" ", "_")
         while name[0].isnumeric():
-            name = name[1:]
+            name = name.replace(name[0], "%")
+        for i in name:          
+            if i.isalpha() == False and i.isnumeric() == False:
+                name = name.replace(i, " ") 
+        name = name.strip()
+        name = name.replace(" ", "_")
         return name
     elif type(name) == float or int:
         return "not a string"
@@ -149,7 +154,7 @@ print(normalize_name("Today I went to the store"))
 print(normalize_name("%      words hello"))
 print(normalize_name("Today I % $"))
 print(normalize_name("999999%9_a9asdlk"))
-print(normalize_name(9000))
+print(normalize_name("9999"))
 print("\n")
 
 #11
