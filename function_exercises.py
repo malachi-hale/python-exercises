@@ -141,6 +141,8 @@ def normalize_name(name):
                 if i.isalpha() == False and i.isnumeric() == False:
                     name = name.replace(i, " ") 
             name = name.strip()
+            for i in name:
+                name = name.replace("  ", " ")
             name = name.replace(" ", "_")
             if not name:
                 return "The string is made entirely out of symbols"
@@ -157,6 +159,7 @@ print(normalize_name("Today I % $"))
 print(normalize_name("999999%9_a9asdlk"))
 print(normalize_name("9000"))
 print(normalize_name("$#$"))
+print(normalize_name("1 2 3 $()&^$( T#%^H#%^i%^s%^ i%^&S %&(*(a v$%&AlI#%^d p#%^YTh#%^on id#%^%&en$%&TI#$^%%$&^*Fi@$%^*(er  #^#^#@"))
 print("\n")
 
 #11
