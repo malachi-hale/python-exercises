@@ -175,4 +175,23 @@ list = [10, 20, 30, 40, 50]
 print(cumulative_sum(list))
 print("\n")
 
+#Bonus 1 
+def twelveto24(time):
+    if time[-2:] == "am" and time[:2] == "12":
+            return "00" + time[2:-2]
+    elif time[-2:] == "am":
+        return time[:-2]
+    elif time[-2:] == "pm" and time[:2] == "12":
+        return time[:-2]
+    elif len(time) == 6 and time[-2:] == "pm":
+        return str(int(time[:1])+12) + time[1:-2]
+    elif len(time) == 7 and time[-2:] == "pm":
+        return str(int(time[:2])+12) + time[2:-2]
+
+print(twelveto24("10:45am"))
+print(twelveto24("4:30pm"))
+print(twelveto24("12:30pm"))
+
+
+
 
