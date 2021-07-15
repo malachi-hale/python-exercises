@@ -192,7 +192,22 @@ print(twelveto24("10:45am"))
 print(twelveto24("4:30pm"))
 print(twelveto24("12:30pm"))
 
+def col_index(letters):
+    if len(letters) >= 2:
+        numbers = []
+        i = 0
+        while i < len(letters):
+            value = (25 * i) + ord(letters[i]) - 64
+            numbers.append(value)
+            i += 1
+        return sum(numbers)
+    elif len(letters) == 1:
+        numbers1= ""
+        letter_number = ord(letters) - 64
+        numbers1 += str(letter_number)
+        return numbers1 
 
-
-
-
+print(col_index('A')) 
+print(col_index('B'))
+print(col_index('AA'))
+print(col_index('BB'))
